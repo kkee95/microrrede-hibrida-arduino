@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Max Eduardo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 115.8, "left": -51.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 421.1, "left": -38.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 325.1, "left": -38.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 384.2, "left": 201.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay2", "top": 451.4, "left": 201.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay3", "top": 317, "left": 201.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd2",
+      "top": -108.8,
+      "left": -32.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "lcd2:VCC", "mega:5V.1", "gold", [ "h-48", "v163.3", "h386.2" ] ],
+    [ "lcd2:SDA", "mega:20", "green", [ "h-28.8", "v144.2", "h334" ] ],
+    [ "lcd2:SCL", "mega:21", "cyan", [ "h-19.2", "v125.1", "h333.9" ] ],
+    [ "pot1:GND", "mega:GND.2", "red", [ "h57.6", "v-163.2", "h74.65" ] ],
+    [ "pot1:VCC", "mega:5V", "gold", [ "h47.2", "v-153.6", "h55.3" ] ],
+    [ "pot1:SIG", "mega:A1", "green", [ "h66.8", "v-144", "h99.2" ] ],
+    [ "relay3:IN", "mega:1", "blue", [ "h0" ] ],
+    [ "relay1:IN", "mega:2", "blue", [ "h0" ] ],
+    [ "relay2:IN", "mega:3", "blue", [ "h0" ] ],
+    [ "relay3:VCC", "mega:5V", "gold", [ "h0" ] ],
+    [ "relay1:VCC", "mega:5V", "gold", [ "h0" ] ],
+    [ "relay2:VCC", "mega:5V", "gold", [ "h0" ] ],
+    [ "relay1:GND", "mega:GND.3", "red", [ "h0" ] ],
+    [ "relay2:GND", "mega:GND.3", "red", [ "h0" ] ],
+    [ "relay3:GND", "mega:GND.3", "red", [ "h0" ] ],
+    [ "pot2:VCC", "mega:5V", "red", [ "h-96.8", "v-93.3" ] ],
+    [ "pot2:SIG", "mega:A0", "green", [ "h-48.4", "v-93.3" ] ],
+    [ "pot2:GND", "mega:GND.2", "black", [ "h-57.6", "v-93.3" ] ],
+    [ "mega:GND.1", "lcd2:GND", "red", [ "h-153.8", "v-201.6" ] ]
+  ],
+  "dependencies": {}
+}
